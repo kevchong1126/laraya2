@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className={style.right}>
 
           <div className={style.btns}>
-              <Link className={style.btnLink} to='/laraya'>
+              <Link className={style.btnLink} to='/laraya2'>
                 <AiFillHome className={style.icon}/>
                 <p>Home</p>
               </Link>

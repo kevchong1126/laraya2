@@ -23,7 +23,7 @@ const Footer = () => {
           
           <ul className={style.list}>
             <li className={style.listItem}>
-              <Link className={style.link} to='/laraya'>Home</Link>
+              <Link className={style.link} to='/laraya2'>Home</Link>
             </li>
             <li className={style.listItem}>
               <Link className={style.link} to='/bosch'>Windshield Wipers</Link>

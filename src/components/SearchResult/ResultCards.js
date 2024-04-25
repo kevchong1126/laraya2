@@ -34,7 +34,6 @@ const ResultCards = () => {
 
           return splitQuery.every( word =>
           name.includes(word) ||
-          desc?.includes(word) ||
           category?.includes(word) ||
           subCategory?.includes(word) ||  
           partNo === word)
@@ -47,7 +46,6 @@ const ResultCards = () => {
 
           if (splitQuery.every( word => 
             name.includes(word) ||
-            desc?.includes(word) ||
             category?.includes(word) ||
             subCategory?.includes(word) ||  
             partNo === word ) && 

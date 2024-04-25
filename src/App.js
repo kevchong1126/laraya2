@@ -32,7 +32,7 @@ function App() {
       <Navbar />
       <FixedNavbar />
       <Routes>
-        <Route path='/laraya' element={<Home />} />
+        <Route path='/laraya2' element={<Home />} />
         <Route path='/bosch' element={<Wiper />} />
         <Route path='/pennzoil' element={<Pennzoil />} />
         <Route path='/coolant' element={<Coolant />} />

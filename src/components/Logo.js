@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const Logo = () => {
   return (
     <div className={style.logoContainer}>
-        <Link to='/laraya' className={style.logo}>
+        <Link to='/laraya2' className={style.logo}>
         <img className={style.logoImg} src={logo} alt='logo'></img>
         <h1 className={style.logoText}><span>La</span><span>Raya</span></h1>
         </Link>

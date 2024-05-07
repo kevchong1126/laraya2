@@ -4,6 +4,7 @@ import style from './SearchResult.module.scss'
 import ResultHeader from '../components/SearchResult/ResultHeader'
 import ResultCards from '../components/SearchResult/ResultCards'
 import ResultInfo from '../components/SearchResult/ResultInfo'
+import ResultFilters from '../components/SearchResult/ResultFilters'
 
 const SearchResult = () => {
   return (
@@ -13,11 +14,12 @@ const SearchResult = () => {
 
           <div className={style.flex}>
               <div className={style.left}>
-                  <ResultInfo />
+                <ResultInfo />
               </div>
 
               <div className={style.right}>
-                  <ResultCards />
+                <ResultFilters />
+                <ResultCards />
               </div>
           </div>
       </div>

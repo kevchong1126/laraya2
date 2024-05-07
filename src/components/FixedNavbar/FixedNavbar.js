@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import style from './FixedNavbar.module.scss'
 import Search from './Search'
-import SelectCar from './SelectCar'
 
 import { BsFillCartFill } from "react-icons/bs"
 
@@ -62,7 +61,7 @@ const FixedNavbar = () => {
     <div ref={el => navbar.current = el} className={`${style.container} ${isSticky && style.sticky} ${hideSticky && style.hideSticky}`}>
         <div className={style.content}>
             <Search />
-            <SelectCar />
+
             {
               showBag && isSticky && 
               <Link className={style.cartIcon} to='/cart'>

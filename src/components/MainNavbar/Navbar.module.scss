@@ -5,7 +5,7 @@
 
 .navbarContainer{
     @include container;
-    background-color: $yellow;
+    background-color: $blue-dark-1;
     margin-bottom: 8rem;
 
     .navbarContent{
@@ -53,12 +53,12 @@
         @include transition;
 
         .icon{
-            color: $gray-dark-3;
+            color: $white;
             font-size: 1.3rem;
         }
 
         p{
-            color: $gray-dark-3;
+            color: $white;
             font-size: $txt-s;
             font-weight: 700;
         }

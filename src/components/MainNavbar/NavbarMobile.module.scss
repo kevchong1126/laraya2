@@ -10,7 +10,7 @@
     width: 100%;
     height: 0;
     overflow: hidden;
-    background-color: $gray-light-1;
+    background-color: $gray-dark-1;
     z-index: 99;
 
     @include transition($property: height);

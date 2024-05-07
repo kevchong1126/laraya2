@@ -8,10 +8,10 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { ADD } from '../../store/actionCreators/cartItemsCreator';
 
-const ResultCard = ({product, fits}) => {
+const ResultCard = ({product}) => {
     const dispatch = useDispatch();
     const { products } = useSelector( el => el.cartItems);
-    const {img, desc, properties, id, name, price} = product;
+    const {img, partNo, properties, id, name, price} = product;
     
     const AddItemHandler = () => {
         dispatch(ADD(product, 1));
@@ -21,40 +21,34 @@ const ResultCard = ({product, fits}) => {
     <div className={style.container}>
         <div className={style.content}>
 
-            <Link className={style.left} to={`/prod/${id}`} >
+            <Link className={style.top} to={`/prod/${id}`} >
                 <div className={style.imgContainer}>
-                    <img src={process.env.PUBLIC_URL + img} alt={desc?.substring(0,25)} />
+                    <img src={process.env.PUBLIC_URL + img} alt='' />
                 </div>
             </Link>
 
-            <div className={style.right}>
+            <div className={style.bottom}>
 
-                <div className={style.top}  >
+                <div className={style.info}  >
                     <Link className={style.titleLink} to={`/prod/${id}`}>
                         <h3 className={style.title}>{name}</h3>
                     </Link>
-                    <p className={style.price}>₡{price}</p>
-                    {
-                        fits && <div className={style.fits}>Fits Your Car</div>
-                    }
+                    <ul className={style.properties}>
+                        <li className={style.property}>Codigo: {partNo.toUpperCase()}</li>
+                        <li className={style.property}>Categoria: {properties['category'].toUpperCase()} </li>
+                    </ul>
+            
                 </div>
 
-                <div className={style.bottom}>
-                    <ul className={style.properties}>
-                        {
-                            properties && (Object.entries(properties)).map( (property, idx) => {
-                                return  <li key={idx} className={style.property}>
-                                            {property[0].toUpperCase()} : {property[1]}
-                                        </li>
-                            })
-                        }
-                    </ul>
+                <div className={style.priceContainer}>
+                    <p className={style.price}><span>₡</span>{price}</p>
+
                     {
                         !products.find( el => el.id === id) ?
 
-                        <button className={style.addBtn} onClick={AddItemHandler}> <BsCartPlus className={style.addIcon} />Add to Cart</button>
+                        <button className={style.addBtn} onClick={AddItemHandler}>Agregar a Carrito</button>
                         :
-                        <Link className={style.goToCart} to='/cart'>Go to Cart</Link>
+                        <Link className={style.goToCart} to='/cart'>Ir a Carrito</Link>
                     }
                 </div>
             </div>

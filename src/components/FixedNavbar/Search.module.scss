@@ -9,7 +9,7 @@
     grid-column: 2/12;
 
     @include breakpoint(850px){
-        grid-column: 4 / 11;
+        grid-column: 4 / 10;
     }
     .form{
         position: relative;

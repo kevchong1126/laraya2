@@ -1,11 +1,11 @@
 import { combineReducers } from "redux"
 
-import selectedCar from './reducers/selectedCar'
 import cartItems from './reducers/cartItems'
+import filterSelect from "./reducers/filterSelect"
 
 const reducers = combineReducers({
-    selectedCar,
-    cartItems
+    cartItems,
+    filterSelect
 })
 
 export default reducers

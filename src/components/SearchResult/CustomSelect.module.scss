@@ -1,0 +1,55 @@
+@use '../../styles/variables' as *;
+@use '../../styles/typography' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/breakpoints' as *;
+
+.container{
+    position: relative;
+    min-width: 100px;
+    padding: $pd-s;
+    border: 1px solid $gray-dark-1;
+    border-radius: 0.1rem;
+    cursor: pointer;
+    z-index: 9;
+    background-color: $white;
+
+    .labelContainer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+
+        .label{
+            color: $gray-dark-1;
+            font-weight: 500;
+        }
+    }
+
+    .optionsContainer{
+        position: absolute;
+        width: fit-content;
+        top: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        color: $gray-dark-1;
+        border: 1px solid $gray-dark-1;
+        background-color: $white;
+
+        &.show{
+            display: flex;
+        }
+
+        .option{
+            padding: 0.2rem $pd-s;
+            
+            &:hover{
+                background-color: $blue-light-1;
+                color: $white;
+            }
+        }
+    }
+}

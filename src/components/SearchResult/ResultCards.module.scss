@@ -4,9 +4,15 @@
 @use '../../styles/breakpoints' as *;
 
 .container{
-    @include container($margin-top: 3rem);
+    @include container($margin-top: 1rem);
     display: flex;
     flex-direction: column;
+}
+
+.grid{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 

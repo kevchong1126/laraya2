@@ -3,6 +3,7 @@ import style from './ResultCards.module.scss'
 import ResultCard from './ResultCard'
 
 import db from '../../data/db.json'
+import productsFilter from '../../util/productsFilter'
 
 import { useSelector } from 'react-redux'
 
@@ -11,58 +12,23 @@ import { useParams } from 'react-router-dom'
 import ReactPaginate from 'react-paginate'
 
 const ResultCards = () => {
+  const filterState = useSelector( state => state.filterSelect);
+  const { car, mode, category, sort } = filterState;
+  
   const { searchquery } = useParams();
   const [products, setProducts] = useState(null);
-  const selectedCar = JSON.parse(localStorage.getItem('selectedCar'));
-  const { car } = useSelector( el => el.selectedCar);
-  const [fitsCar, setFitsCar] = useState(false);
 
   const [pageNumber, setPageNumber] = useState(0);
-  const qtyPerPage = 10;
+  const qtyPerPage = 20;
   const pagesVisited = pageNumber * qtyPerPage;
 
   useEffect(() => {
-    const splitQuery = searchquery.split('-');
-    const ht = {};
-
-    const newProducts = db.filter( product => {
-        const { name, partNo, properties, desc, make } = product;
-        const { category, subCategory } = properties;
-
-        if (selectedCar){
-          setFitsCar(true);
-
-          return splitQuery.every( word =>
-          name.includes(word) ||
-          category?.includes(word) ||
-          subCategory?.includes(word) ||  
-          partNo === word)
-          
-          && selectedCar === make
-                 
-        }
-        else {
-          setFitsCar(false);
-
-          if (splitQuery.every( word => 
-            name.includes(word) ||
-            category?.includes(word) ||
-            subCategory?.includes(word) ||  
-            partNo === word ) && 
-            
-            !ht[partNo]){
-              ht[partNo] = true;
-              return true
-          }
-        } 
-        
-        return false
-    })
-
+    const newProducts = productsFilter(db, searchquery, filterState);
+    console.log(newProducts.length)
     setPageNumber(0)
     setProducts(newProducts);
     
-  }, [searchquery, car, selectedCar]);
+  }, [searchquery, car, mode, category, sort]);
 
   const pageCount = products ? Math.ceil(products.length / qtyPerPage) : 0;
 
@@ -81,10 +47,14 @@ const ResultCards = () => {
     }
 
     return (<>
-              <h3 className={style.productLength}> Showing "{products.length}" product(s)</h3>
-              {
-              products.slice(pagesVisited, pagesVisited+qtyPerPage).map(el => <ResultCard key={el.id} product={el} fits={fitsCar}/>)
-              }
+              <h3 className={style.productLength}> Mostrando "{products.length}" producto(s)</h3>
+              
+              <div className={style.grid}>
+                {
+                  products.slice(pagesVisited, pagesVisited+qtyPerPage).map(el => <ResultCard key={el.id} product={el}/>)
+                }
+              </div>
+      
               <ReactPaginate 
                 previousLabel='Previous'
                 nextLabel='Next'

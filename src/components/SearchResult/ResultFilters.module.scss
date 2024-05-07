@@ -1,0 +1,28 @@
+@use '../../styles/variables' as *;
+@use '../../styles/typography' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/breakpoints' as *;
+
+.container{
+    @include container(3rem);
+    background-color: $gray-light-1;
+    padding: $pd-nm 0;
+
+    .content{
+        width: 95%;
+        margin-inline: auto;
+        display: flex;
+        gap: 1rem;
+
+        .filter{
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            .label{
+                font-weight: 600;
+                color: $gray-dark-2;
+            }
+        }
+    }
+}

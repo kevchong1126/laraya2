@@ -4,8 +4,11 @@
 @use '../../styles/breakpoints' as *;
 
 .container{
-    width: 280px;
-    //height: 350px;
+    min-width: 180px;
+    width: 40%;
+    @include tablet{
+      width: 280px;  
+    }
     border: 1px solid $gray-light-1;
     padding: $pd-nm;
 

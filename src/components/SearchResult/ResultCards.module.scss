@@ -13,7 +13,11 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+
+    @include tablet{
+      gap: 1rem;  
+    }
+    
 }
 
 .paginate{

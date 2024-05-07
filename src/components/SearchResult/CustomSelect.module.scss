@@ -10,10 +10,10 @@
     border: 1px solid $gray-dark-1;
     border-radius: 0.1rem;
     cursor: pointer;
-    z-index: 9;
     background-color: $white;
 
     .labelContainer{
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -39,7 +39,9 @@
         border: 1px solid $gray-dark-1;
         background-color: $white;
 
-        &.show{
+        z-index: 2;
+
+        &.show{ 
             display: flex;
         }
 

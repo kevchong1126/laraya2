@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/laraya2/static/css/main.62cac8bd.css",
-    "main.js": "/laraya2/static/js/main.637e375b.js",
+    "main.css": "/laraya2/static/css/main.ce8b2b2d.css",
+    "main.js": "/laraya2/static/js/main.2e3b90b5.js",
     "static/media/rims.png": "/laraya2/static/media/rims.5b24be27e29dd3806064.png",
     "static/media/wipers.png": "/laraya2/static/media/wipers.0aa558c794d698db8565.png",
     "static/media/oil.png": "/laraya2/static/media/oil.dc1edf48aa86cd857578.png",
@@ -41,14 +41,13 @@
     "static/media/slick.svg": "/laraya2/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/laraya2/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/laraya2/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/addVehicle.svg": "/laraya2/static/media/addVehicle.7c3da99267f0c579b1bedffd308724cc.svg",
     "static/media/slick.woff": "/laraya2/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/laraya2/index.html",
-    "main.62cac8bd.css.map": "/laraya2/static/css/main.62cac8bd.css.map",
-    "main.637e375b.js.map": "/laraya2/static/js/main.637e375b.js.map"
+    "main.ce8b2b2d.css.map": "/laraya2/static/css/main.ce8b2b2d.css.map",
+    "main.2e3b90b5.js.map": "/laraya2/static/js/main.2e3b90b5.js.map"
   },
   "entrypoints": [
-    "static/css/main.62cac8bd.css",
-    "static/js/main.637e375b.js"
+    "static/css/main.ce8b2b2d.css",
+    "static/js/main.2e3b90b5.js"
   ]
 }

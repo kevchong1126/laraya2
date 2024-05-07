@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/laraya2/static/css/main.ce8b2b2d.css",
+    "main.css": "/laraya2/static/css/main.2d383115.css",
     "main.js": "/laraya2/static/js/main.2e3b90b5.js",
     "static/media/rims.png": "/laraya2/static/media/rims.5b24be27e29dd3806064.png",
     "static/media/wipers.png": "/laraya2/static/media/wipers.0aa558c794d698db8565.png",
@@ -43,11 +43,11 @@
     "static/media/slick.ttf": "/laraya2/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/laraya2/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/laraya2/index.html",
-    "main.ce8b2b2d.css.map": "/laraya2/static/css/main.ce8b2b2d.css.map",
+    "main.2d383115.css.map": "/laraya2/static/css/main.2d383115.css.map",
     "main.2e3b90b5.js.map": "/laraya2/static/js/main.2e3b90b5.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce8b2b2d.css",
+    "static/css/main.2d383115.css",
     "static/js/main.2e3b90b5.js"
   ]
 }

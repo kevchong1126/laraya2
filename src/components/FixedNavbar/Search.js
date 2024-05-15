@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { FaSearch } from "react-icons/fa";
 
-const Search = () => {
+const Search = ({active}) => {
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
   
@@ -26,9 +26,9 @@ const Search = () => {
   }
 
   return (
-    <div className={style.formContainer} >
+    <div className={`${style.formContainer} ${active ? style.active : ''}`} >
         <form className={style.form} onSubmit={handleSearch}>
-            <input className={style.input} type='text' value={query} onChange={queryHandler} placeholder='Search for part by name or code, i.e: "BRAKE PAD", "OIL FILTER", "BKR5E"'></input>
+            <input className={style.input} type='text' value={query} onChange={queryHandler} placeholder='Buscar pieza: "Amortiguador" "Escobillas"'></input>
             <button className={style.btn}><FaSearch className={style.icon} /></button>
         </form>
     </div>

@@ -4,12 +4,21 @@
 @use '../../styles/breakpoints' as *;
 
 .formContainer{
-    width: 100%;
+    width: 80%;
+    margin-inline: auto;
     
-    grid-column: 2/12;
+    pointer-events: none;
 
-    @include breakpoint(850px){
-        grid-column: 4 / 10;
+    &.active{
+        pointer-events: auto;
+
+        .input{
+            background-color: white;
+        }
+
+        .btn{
+            background-color: $blue-dark-1;
+        }
     }
     .form{
         position: relative;
@@ -28,6 +37,7 @@
     padding-left: $pd-nm;
     padding-right: 5rem;
     font-weight: 700;
+    background-color: $gray-light-1;
 
     &::placeholder{
         color: rgba($color: $black, $alpha: 0.3);
@@ -45,7 +55,7 @@
     border-radius: 0 0.1rem 0.1rem 0;
     outline: none;
     width: 4rem;
-    background-color: $blue-dark-1;
+    background-color: $gray-light-1;
     
     @include transition;
 

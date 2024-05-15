@@ -3,4 +3,5 @@
  export const SELECT_MODE = 'SELECT_MODE';
  export const SELECT_CATEGORY = 'SELECT_CATEGORY';
  export const SORT_BY = 'SORT_BY';
+ export const RESET = 'RESET';
  

@@ -1,43 +1,39 @@
 import React, { useState } from 'react'
-import style from './CustomSelect.module.scss'
+import styles from './CustomSelect.module.scss'
+
+import { FaAngleDown } from "react-icons/fa6";
+
 import useOutsideClick from '../../hooks/useOutsideClick'
 
-import { GoTriangleDown } from "react-icons/go"
+//Redux
+import { useDispatch } from 'react-redux';
 
-const CustomSelect = ({value, makes, onSelectMake}) => {
-    const [isClicked, setIsClicked] = useState(false);
-    const ref = useOutsideClick(() => setIsClicked(false));
+const CustomSelect = ({ options, option, setOption, idx, active, setActive }) => {
+    const dispatch = useDispatch();
+    const [ show, setShow ] = useState(false);
 
-    const makeHandler = make => {
-        setIsClicked(false);
-        onSelectMake(make);
-    };
-
+    const ref = useOutsideClick(() => {
+        setShow(false)
+    });
+    
   return (
-    <div className={style.selectContainer} ref={ref}>
-
-        {
-            makes && <>
-                <input className={`${style.select}`} type='text' value={value} readOnly onClick={() => setIsClicked(prev => !prev)}/>
-
-                <ul className={`${isClicked ? style.options : style.none}`} >
-                    {
-                    makes.map( (make, idx) => (
-                        <li className={style.option} key={idx} onClick={() => makeHandler(make)}>
-                            {make}
-                        </li>  
-                    )
-                    )}
-                </ul>
-            </>
-        }
-
-        <div className={style.arrow}>
-            <GoTriangleDown className={style.icon}/>
+    <div ref={ref} className={`${styles.container} ${active > idx-2 ? styles.active : ''}`} onClick={() => setShow(prev => !prev)}>
+        <div className={styles.labelContainer}>
+            <p className={styles.label}>{idx} | {option}</p>
+            <FaAngleDown  className={styles.icon} />
         </div>
-        
+        <ul className={`${styles.optionsContainer} ${show ? styles.show: ''}`} >
+            {
+                options.map( (el, index) => <li key={index} className={styles.option}
+                onClick={() => {
+                    dispatch(setOption(el));
+                    setActive(idx)
+                } }>{el}</li>)
+            }
+        </ul>
     </div>
   )
 }
+
 
 export default CustomSelect

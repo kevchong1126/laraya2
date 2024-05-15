@@ -24,11 +24,11 @@ const ResultCards = () => {
 
   useEffect(() => {
     const newProducts = productsFilter(db, searchquery, filterState);
-    console.log(newProducts.length)
+    console.log(filterState)
     setPageNumber(0)
     setProducts(newProducts);
     
-  }, [searchquery, car, mode, category, sort]);
+  }, [searchquery, sort]);
 
   const pageCount = products ? Math.ceil(products.length / qtyPerPage) : 0;
 

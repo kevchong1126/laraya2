@@ -1,4 +1,4 @@
-import { SELECT_CAR, SELECT_MODE, SELECT_CATEGORY, SORT_BY } from "../actionTypes/filterSelectTypes";
+import { SELECT_CAR, SELECT_MODE, SELECT_CATEGORY, SORT_BY, RESET } from "../actionTypes/filterSelectTypes";
 
 export const CAR_SELECT = car => {
     return {
@@ -33,5 +33,11 @@ export const SORT = sort => {
         payload: {
             sort
         }
+    }
+}
+
+export const RESET_SELECT = () => {
+    return {
+        type: RESET
     }
 }

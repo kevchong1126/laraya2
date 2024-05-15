@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import style from './FixedNavbar.module.scss'
-import Search from './Search'
+import SearchContainer from './SearchContainer';
 
 import { BsFillCartFill } from "react-icons/bs"
 
@@ -60,7 +60,7 @@ const FixedNavbar = () => {
   return (
     <div ref={el => navbar.current = el} className={`${style.container} ${isSticky && style.sticky} ${hideSticky && style.hideSticky}`}>
         <div className={style.content}>
-            <Search />
+          <SearchContainer />
 
             {
               showBag && isSticky && 

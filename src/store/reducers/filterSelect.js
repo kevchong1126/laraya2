@@ -1,9 +1,9 @@
-import { SELECT_CAR, SELECT_MODE, SELECT_CATEGORY, SORT_BY } from "../actionTypes/filterSelectTypes"
+import { SELECT_CAR, SELECT_MODE, SELECT_CATEGORY, SORT_BY, RESET } from "../actionTypes/filterSelectTypes"
 
 const initialState = {
-    car: 'Carro',
-    mode: 'Nombre',
-    category: 'Todos',
+    car: 'Marca',
+    mode: 'Buscar por:',
+    category: 'Categoria',
     sort: 'Alfabetico (A-Z)'
 }
 
@@ -40,7 +40,12 @@ const filterSelectReducer = (state = initialState, action) => {
                 sort
             }
         }
-
+        case RESET: {
+            return {
+                ...initialState
+            }
+        }
+        
         default: return state
     }
 }

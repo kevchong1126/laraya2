@@ -1,12 +1,12 @@
-export const cars = ['Carro', 'CHEVROLET',  'DAIHATSU',
+export const cars = ['CHEVROLET',  'DAIHATSU',
     'HONDA', 'HYUNDAI', 'ISUZU', 'MAZDA',
     'MITSUBISHI', 'NISSAN', 'SUBARU', 'SUZUKI',
     'TOYOTA', 'VOLKSWAGEN'
   ];
 
-export const modes = ['Nombre', 'Codigo', 'Descripcion', 'Categoria'];
+export const modes = ['NOMBRE', 'CODIGO', 'DESCRIPCION'];
 
-export const categories = ['Todos', 'ACCESORIOS', 'CARROCERIA', 'CHUCHERIA', 'CLUTCH',
+export const categories = ['ACCESORIOS', 'CARROCERIA', 'CHUCHERIA', 'CLUTCH',
   'ELECTRICOS', 'FRENOS', 'HERRAMIENTAS', 'HIDRAULICO Y PARTES', 'LUBRICANTES Y QUIMICOS', 'MOTOR',
   'ROLES Y BOCINAS', 'SUSPENSION', 'TUNE-UP', 
 ];
